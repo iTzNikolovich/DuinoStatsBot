@@ -47,7 +47,7 @@ run
 ### Add cron, in this example, it runs every 12 hours, every day of the week.  
 `crontab -e`
 
-`# 0 12 * * * /usr/bin/python3 /home/pi/c9sdk/workspace/My_Scripts/DuinoCoinTelegramBot-main/Duinocoin_stats.py`
+`0 12 * * * /usr/bin/python3 /home/pi/c9sdk/workspace/My_Scripts/DuinoCoinTelegramBot-main/Duinocoin_stats.py`
 
 
 ![a1](https://user-images.githubusercontent.com/47089904/203236957-4b5d54df-a642-465c-8434-e89a41261d15.jpg)
