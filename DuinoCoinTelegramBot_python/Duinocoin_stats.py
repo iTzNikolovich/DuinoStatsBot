@@ -44,7 +44,7 @@ duco_balance = json_object['result']['balance']['balance']
 txt2= open(f"{Working_dir}prev_balance.txt", "w")
 txt2.write(str(duco_balance))
 txt2.close()
-increased_balance = duco_balance - float(prev_balance)
+increased_balance = float(duco_balance) - float(prev_balance)
 
 minerscount = len(json_object['result']['miners'])
 
