@@ -13,6 +13,11 @@ Shell version... https://github.com/AzagraMac/DuinoCoinTelegramBot
 ### Get chat ID:
 - https://t.me/myidbot
 
+or
+
+Find your chat ID here...
+https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android
+
 Change in the script, the variables token, id and the username of your duinocoin wallet.
 
 ```
