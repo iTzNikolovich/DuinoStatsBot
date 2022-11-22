@@ -1,5 +1,7 @@
-# Python DuinoCoinTelegramBot
+# Python DuinoCoin Telegram Bot
 Python script for updates about your miners status and balance
+
+Please note, this is by no means the final version, this was just a quick test. It is working 100% though. It still needs to be cleaned up.
 
 Inspiration for this script... https://github.com/AzagraMac
 
@@ -7,7 +9,7 @@ Shell version... https://github.com/AzagraMac/DuinoCoinTelegramBot
 
 
 
-### Create bot, and get token bot:
+### Create bot, and get bot token:
 - https://t.me/botfather
 
 ### Get chat ID:
@@ -21,9 +23,10 @@ https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android
 Change in the script, the variables token, id and the username of your duinocoin wallet.
 
 ```
-TOKEN="YOUR_TOKEN_BOT"
+bot = telepot.Bot('YOUR_TOKEN_BOT')
 ID="YOUR_CHAT_ID"
 WALLET="YOUR_USERNAME_WALLET"
+Working_dir = 'THE FOLDER WHERE YOUR SCRIPT IS LOCATED/'
 ```
 
 ### Assign execution permissions
@@ -41,7 +44,7 @@ run
 ### Launch script
 `python3 Duinocoin_stats.py`
 
-### Add cron, in this example, it runs every 6 hours, every day of the week.  
+### Add cron, in this example, it runs every 12 hours, every day of the week.  
 `crontab -e`
 
 `# 0 12 * * * /usr/bin/python3 /home/pi/c9sdk/workspace/My_Scripts/DuinoCoinTelegramBot-main/Stats.py`
