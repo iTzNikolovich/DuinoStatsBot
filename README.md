@@ -48,3 +48,8 @@ run
 `crontab -e`
 
 `# 0 12 * * * /usr/bin/python3 /home/pi/c9sdk/workspace/My_Scripts/DuinoCoinTelegramBot-main/Stats.py`
+
+
+![a1](https://user-images.githubusercontent.com/47089904/203236957-4b5d54df-a642-465c-8434-e89a41261d15.jpg)
+
+Example of the telegram message. The +0.076 is the increase in balance between each run of the script. Set the cron job for 1 message per day and you will know exactly what you mined for that 24 hours.
