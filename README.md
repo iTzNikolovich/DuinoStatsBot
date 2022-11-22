@@ -29,6 +29,15 @@ WALLET="YOUR_USERNAME_WALLET"
 ### Assign execution permissions
 `chmod +x Duinocoin_stats.py`
 
+### Install extra library
+run
+
+`pip install telepota --upgrade`
+
+`python -m pip install requests`
+
+`python -m pip install urllib3`
+
 ### Launch script
 `python3 Duinocoin_stats.py`
 
