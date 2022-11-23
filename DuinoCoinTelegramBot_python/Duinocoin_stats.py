@@ -52,7 +52,10 @@ for miners in json_object['result']['miners']:
     miner_names.append(miners['identifier'])
     
 for miners in json_object['result']['miners']:
-    miner_hashrate.append(str(int(miners['hashrate'])) + " H/s")
+    if int(miners['hashrate']) > 1000:
+        miner_hashrate.append(str(int(miners['hashrate']/1000)) + " KH/s")
+    else:
+        miner_hashrate.append(str(int(miners['hashrate'])) + " H/s")
 
 # print("ᕲ DuinoCoin")
 # print(u'\u1FA9' + " Balance: " + str(round(duco_balance,2)) + " ᕲ" )
@@ -78,9 +81,9 @@ txt1.close()
 #print(miner_names[2] + ": " + str(int(miner_hashrate[2])))
 #print(miner_names[3] + ": " + str(int(miner_hashrate[3])))
 
-resultstring = "ᕲ DuinoCoin"
+resultstring = "________ ᕲ DuinoCoin ________"
 resultstring += '\n'
-resultstring += '🪙' + " Balance: " + str(round(duco_balance,2)) + " ᕲ"  + " + "  + str(round(increased_balance,3))
+resultstring += '🪙' + " Balance: " + str(round(duco_balance,2)) + " ᕲ"  + " + "  + str(round(increased_balance,2))
 resultstring += '\n'
 resultstring += u'\u26CF' + " Workers: " + str(minerscount)
 resultstring += '\n'
