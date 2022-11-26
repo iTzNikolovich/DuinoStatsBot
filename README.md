@@ -38,8 +38,3 @@ dir = '' # Paste your working directory
 
 ### Launch script
 `python3 duinostatsbot.py`
-
-### You can add a cronjob to run the script as a process
-`crontab -e`
-
-`* * * * * /usr/bin/python3 /YOUR_DIRECTORY/duinostatsbot.py`
