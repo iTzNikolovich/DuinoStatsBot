@@ -38,3 +38,6 @@ dir = '' # Paste your working directory
 
 ### Launch script
 `python3 duinostatsbot.py`
+
+
+> Thanks to [Welsyntoffie](https://github.com/Welsyntoffie/DuinoCoinTelegramBot_python) for his contribute
