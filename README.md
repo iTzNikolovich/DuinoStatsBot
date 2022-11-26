@@ -39,5 +39,5 @@ dir = '' # Paste your working directory
 ### Launch script
 `python3 duinostatsbot.py`
 
-
+#### Thanks to:
 > This bot is based on [Welsyntoffie's repository](https://github.com/Welsyntoffie/DuinoCoinTelegramBot_python)
