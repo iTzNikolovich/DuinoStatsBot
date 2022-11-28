@@ -94,6 +94,8 @@ def reply(msg):
         bot.sendMessage(ID, resultstring, parse_mode="HTML")
     elif command == '/balance' and chat_id == ID:
         bot.sendMessage(ID, '💰' + "Balance: " + str(round(duco_balance, 2)) + " ᕲ")
+    elif command == '/ping' and chat_id == ID:
+        bot.sendMessage(ID, "🏓 PONG")
     else:
         bot.sendMessage(ID, "Try again.")
 
