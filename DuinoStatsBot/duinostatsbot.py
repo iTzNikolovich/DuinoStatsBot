@@ -25,12 +25,12 @@ miner_stats = []
 
 miner_names.clear()
 
-minerslog = open(f"{dir}miners.txt", "w")
-minerslog.close()
+txt1 = open(f"{dir}miners.txt", "w")
+txt1.close()
 
-balancelog = open(f"{dir}balance.txt", "r")
-prev_balance = balancelog.read()
-balancelog.close()
+txt2 = open(f"{dir}balance.txt", "r")
+prev_balance = txt2.read()
+txt2.close()
 
 duinourl = f'https://server.duinocoin.com/users/{WALLET}'
 
@@ -41,9 +41,9 @@ def dreq(url):
 json_object = json.loads(dreq(duinourl))
 
 duco_balance = json_object['result']['balance']['balance']
-balancelog = open(f"{dir}balance.txt", "w")
-balancelog.write(str(duco_balance))
-balancelog.close()
+txt2 = open(f"{dir}balance.txt", "w")
+txt2.write(str(duco_balance))
+txt2.close()
 increased_balance = float(duco_balance) - float(prev_balance)
 
 minerscount = len(json_object['result']['miners'])
@@ -57,15 +57,15 @@ for miners in json_object['result']['miners']:
 for x in miner_names:
     miner_stats.append(miner_names[i] + ": " + str(miner_hashrate[i]))
     #print(miner_stats[i])
-    minerslog = open(f"{dir}miners.txt", "a")
-    minerslog.write(miner_stats[i])
-    minerslog.write('\n')
+    txt1 = open(f"{dir}miners.txt", "a")
+    txt1.write(miner_stats[i])
+    txt1.write('\n')
     i = i + 1
-minerslog.close()
+txt1.close()
 
-minerslog = open(f"{dir}miners.txt", "r")
-miners_stats = minerslog.read()
-minerslog.close()
+txt1 = open(f"{dir}miners.txt", "r")
+miners_stats = txt1.read()
+txt1.close()
 
 resultstring = '🌀 ' + WALLET + "'s info"
 resultstring += '\n'
