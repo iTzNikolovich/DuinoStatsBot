@@ -12,9 +12,8 @@ warnings.filterwarnings('ignore')
 bot = telepot.Bot('YOUR_TOKEN_BOT') # Replace YOUR_TOKEN_BOT with your bot token from BotFather
 ID = 0000 # Replace '0000' with your chat id
 WALLET = "YOUR_DUINO_USERNAME" # Replace YOUR_DUINO_USERNAME with your wallet username
-dir = '' # Paste your working directory
+Working_dir = '' # Paste your working directory
 
-i = 0
 
 response = requests.get(f'https://server.duinocoin.com/users/{WALLET}')
 data = response.json()
@@ -24,24 +23,26 @@ miner_hashrate = []
 miner_stats = []
 
 miner_names.clear()
+miner_names.clear()
 
-txt1 = open(f"{dir}miners.txt", "w")
+i = 0
+
+txt1 = open(f"{Working_dir}miners.txt", "w")
 txt1.close()
 
-txt2 = open(f"{dir}balance.txt", "r")
+txt2 = open(f"{Working_dir}prev_balance.txt", "r")
 prev_balance = txt2.read()
 txt2.close()
 
 duinourl = f'https://server.duinocoin.com/users/{WALLET}'
-
-def dreq(url):
+def domoticzrequest2 (url):
     request = urllib.request.Request(url)
     response = urllib.request.urlopen(request)
     return response.read()
-json_object = json.loads(dreq(duinourl))
+json_object = json.loads(domoticzrequest2(duinourl))
 
 duco_balance = json_object['result']['balance']['balance']
-txt2 = open(f"{dir}balance.txt", "w")
+txt2= open(f"{Working_dir}prev_balance.txt", "w")
 txt2.write(str(duco_balance))
 txt2.close()
 increased_balance = float(duco_balance) - float(prev_balance)
@@ -52,26 +53,33 @@ for miners in json_object['result']['miners']:
     miner_names.append(miners['identifier'])
     
 for miners in json_object['result']['miners']:
-    miner_hashrate.append(str(int(miners['hashrate'])) + " H/s")
+    if int(miners['hashrate']) > 1000:
+        miner_hashrate.append(str(int(miners['hashrate']/1000)) + " KH/s")
+    else:
+        miner_hashrate.append(str(int(miners['hashrate'])) + " H/s")
+
 
 for x in miner_names:
     miner_stats.append(miner_names[i] + ": " + str(miner_hashrate[i]))
     #print(miner_stats[i])
-    txt1 = open(f"{dir}miners.txt", "a")
+    txt1 = open(f"{Working_dir}miners.txt", "a")
     txt1.write(miner_stats[i])
     txt1.write('\n')
     i = i + 1
 txt1.close()
 
-txt1 = open(f"{dir}miners.txt", "r")
+txt1 = open(f"{Working_dir}miners.txt", "r")
 miners_stats = txt1.read()
 txt1.close()
+    
 
-resultstring = '🌀 ' + WALLET + "'s info"
+resultstring = "________ ᕲ DuinoCoin ________"
 resultstring += '\n'
-resultstring += '💰 ' + "Balance: " + str(round(duco_balance, 2)) + " ᕲ"  + " + "  + str(round(increased_balance,3))
+resultstring += "💳 " + WALLET + "'s info"
 resultstring += '\n'
-resultstring += '👾 ' + "Workers: " + str(minerscount)
+resultstring += "💰 Balance: " + str(round(duco_balance,2)) + " ᕲ"  + " + "  + str(round(increased_balance,2))
+resultstring += '\n'
+resultstring += "🚜 Workers: " + str(minerscount)
 resultstring += '\n'
 resultstring += miners_stats
 
