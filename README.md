@@ -13,7 +13,7 @@ Shell version... https://github.com/AzagraMac/DuinoCoinTelegramBot
 ### Get your chat ID:
 - https://t.me/myidbot
 
-### Change the following lines in the code
+### Change the following lines in the code
 
 ```
 bot = telepot.Bot('YOUR_TOKEN_BOT') # Replace YOUR_TOKEN_BOT with your bot token from BotFather
