@@ -1,6 +1,5 @@
 # DuinoCoin bot
-Your dashboard in a Telegram bot
-
+Your dashboard in a Telegram bot.
 
 Inspiration for this script... https://github.com/AzagraMac
 
@@ -14,9 +13,7 @@ Shell version... https://github.com/AzagraMac/DuinoCoinTelegramBot
 ### Get your chat ID:
 - https://t.me/myidbot
 
-or
-
-Change the following lines in the code
+### Change the following lines in the code
 
 ```
 bot = telepot.Bot('YOUR_TOKEN_BOT') # Replace YOUR_TOKEN_BOT with your bot token from BotFather
@@ -38,6 +35,18 @@ dir = '' # Paste your working directory
 
 ### Launch script
 `python3 duinostatsbot.py`
+
+### Optional: Add commands list in BotFather
+
+![duinostatsbot](https://user-images.githubusercontent.com/64737169/204621240-8d825d8b-a02e-4118-b8ec-7388f1b5b70a.jpeg)
+
+If you want a list of command like this 👆, use `/setcommands` in Bot Father and send the following list
+
+```
+start - ❗️Start
+info - 🌀Dashboard
+balance - 💰Balance
+```
 
 #### Thanks to:
 > This bot is based on [Welsyntoffie's repository](https://github.com/Welsyntoffie/DuinoCoinTelegramBot_python)
