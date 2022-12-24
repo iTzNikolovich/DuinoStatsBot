@@ -102,4 +102,4 @@ def reply(msg):
 bot.message_loop(reply)
 
 while 1:
-    time.sleep(10)
+    time.sleep(1.5)
