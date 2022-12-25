@@ -29,9 +29,9 @@ dir = '' # Paste your working directory
 
 `pip install telepota --upgrade`
 
-`python -m pip install requests`
+`pip install requests`
 
-`python -m pip install urllib3`
+`pip install urllib3`
 
 ### Launch script
 `python3 duinostatsbot.py`
