@@ -25,7 +25,7 @@ dir = '' # Paste your working directory
 ### Assign execution permissions
 `chmod +x duinostatsbot.py`
 
-### Install extra library
+### Install required library
 
 `pip install telepota --upgrade`
 
